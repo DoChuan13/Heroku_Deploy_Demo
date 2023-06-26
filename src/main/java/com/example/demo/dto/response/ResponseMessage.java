@@ -1,12 +1,12 @@
 package com.example.demo.dto.response;
 
-public class ResponMessage {
+public class ResponseMessage {
     private String message;
 
-    public ResponMessage() {
+    public ResponseMessage() {
     }
 
-    public ResponMessage(String message) {
+    public ResponseMessage(String message) {
         this.message = message;
     }
 

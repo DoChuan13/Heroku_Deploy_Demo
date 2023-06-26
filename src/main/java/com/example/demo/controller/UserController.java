@@ -1,7 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.dto.request.ChangeAvatar;
-import com.example.demo.dto.response.ResponMessage;
+import com.example.demo.dto.response.ResponseMessage;
 import com.example.demo.model.User;
 import com.example.demo.security.jwt.JwtProvider;
 import com.example.demo.security.jwt.JwtTokenFilter;
@@ -38,7 +38,7 @@ public class UserController {
         } else {
             user.setAvatar(avatar.getAvatar());
             userService.save(user);
-            return new ResponseEntity<>(new ResponMessage("Yes"), HttpStatus.OK);
+            return new ResponseEntity<>(new ResponseMessage("Yes"), HttpStatus.OK);
         }
     }
 }

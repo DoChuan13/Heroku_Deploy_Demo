@@ -5,7 +5,11 @@ import com.example.demo.model.User;
 import com.example.demo.repository.ICategoryRepository;
 import com.example.demo.security.userprincal.UserDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 @Service
 public class CategoryServiceIMPL implements ICategoryService {
@@ -29,5 +33,15 @@ public class CategoryServiceIMPL implements ICategoryService {
     @Override
     public Boolean existByName(String name) {
         return categoryRepository.existsByName(name);
+    }
+
+    @Override
+    public Page<Category> findAll(Pageable pageable) {
+        return categoryRepository.findAll(pageable);
+    }
+
+    @Override
+    public Optional<Category> findById(Long id) {
+        return categoryRepository.findById(id);
     }
 }
